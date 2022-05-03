@@ -1,17 +1,19 @@
 #!/usr/bin/env ruby
-array = [1,2,3,4,5,6,7,8,9,10]
-
-array.map! do |x|
-    if x % 2 == 0 && x % 5 == 0
-        x = "FizzBuzz"
-    elsif x % 2 == 0
-        x = "Fizz"
-    elsif
-        x % 5 == 0
-        x = "Buzz"
+def fizzbuzz(first_num, last_num, fizz_num, buzz_num)
+  numbers_array = (first_num..last_num).to_a
+  numbers_array.map! do |x|
+    if x % fizz_num == 0 && x % buzz_num == 0
+        "FizzBuzz"
+    elsif x % fizz_num == 0
+        "Fizz"
+    elsif x % buzz_num == 0
+        "Buzz"
     else
-        x
+      x
     end
+  end
+p numbers_array
 end
 
-p array
+fizzbuzz(1, 100, 6, 7)
+
